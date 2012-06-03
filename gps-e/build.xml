@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_gpx-e" default="compile.module.gpx-e">
+  <dirname property="module.gpx-e.basedir" file="${ant.file.module_gpx-e}"/>
+  
+  <property name="module.jdk.home.gpx-e" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.gpx-e" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.gpx-e" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.gpx-e" value="${compiler.args}"/>
+  
+  <property name="gpx-e.output.dir" value="E:/_SIRRUFF/java/gpxExtractor/out/production/gpx-e"/>
+  <property name="gpx-e.testoutput.dir" value="E:/_SIRRUFF/java/gpxExtractor/out/test/gpx-e"/>
+  
+  <path id="gpx-e.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="gpx-e.module.classpath">
+    <path refid="${module.jdk.classpath.gpx-e}"/>
+  </path>
+  
+  <path id="gpx-e.runtime.module.classpath">
+    <pathelement location="${gpx-e.output.dir}"/>
+    <pathelement location="${gpx-e.testoutput.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.gpx-e">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.gpx-e">
+    <patternset refid="excluded.from.module.gpx-e"/>
+  </patternset>
+  
+  <path id="gpx-e.module.sourcepath">
+    <dirset dir="gps-e">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.gpx-e" depends="compile.module.gpx-e.production,compile.module.gpx-e.tests" description="Compile module gpx-e"/>
+  
+  <target name="compile.module.gpx-e.production" description="Compile module gpx-e; production classes">
+    <mkdir dir="${gpx-e.output.dir}"/>
+    <javac2 destdir="${gpx-e.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.gpx-e}/javac">
+      <compilerarg line="${compiler.args.gpx-e}"/>
+      <bootclasspath refid="gpx-e.module.bootclasspath"/>
+      <classpath refid="gpx-e.module.classpath"/>
+      <src refid="gpx-e.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.gpx-e"/>
+    </javac2>
+    
+    <copy todir="${gpx-e.output.dir}">
+      <fileset dir="gps-e/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.gpx-e.tests" depends="compile.module.gpx-e.production" description="compile module gpx-e; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.gpx-e" description="cleanup module">
+    <delete dir="${gpx-e.output.dir}"/>
+    <delete dir="${gpx-e.testoutput.dir}"/>
+  </target>
+</project>

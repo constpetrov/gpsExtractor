@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_gps-e" default="compile.module.gps-e">
+  <dirname property="module.gps-e.basedir" file="${ant.file.module_gps-e}"/>
+  
+  <property name="module.jdk.home.gps-e" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.gps-e" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.gps-e" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.gps-e" value="${compiler.args}"/>
+  
+  <property name="gps-e.output.dir" value="${module.gps-e.basedir}/../out/production/gps-e"/>
+  <property name="gps-e.testoutput.dir" value="${module.gps-e.basedir}/../out/test/gps-e"/>
+  
+  <path id="gps-e.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="gps-e.module.production.classpath">
+    <path refid="${module.jdk.classpath.gps-e}"/>
+    <path refid="library.swingx.classpath"/>
+    <path refid="library.swingx-ws.classpath"/>
+  </path>
+  
+  <path id="gps-e.runtime.production.module.classpath">
+    <pathelement location="${gps-e.output.dir}"/>
+    <path refid="library.swingx.classpath"/>
+    <path refid="library.swingx-ws.classpath"/>
+  </path>
+  
+  <path id="gps-e.module.classpath">
+    <path refid="${module.jdk.classpath.gps-e}"/>
+    <pathelement location="${gps-e.output.dir}"/>
+    <path refid="library.swingx.classpath"/>
+    <path refid="library.swingx-ws.classpath"/>
+  </path>
+  
+  <path id="gps-e.runtime.module.classpath">
+    <pathelement location="${gps-e.output.dir}"/>
+    <pathelement location="${gps-e.testoutput.dir}"/>
+    <path refid="library.swingx.classpath"/>
+    <path refid="library.swingx-ws.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.gps-e">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.gps-e">
+    <patternset refid="excluded.from.module.gps-e"/>
+  </patternset>
+  
+  <path id="gps-e.module.sourcepath">
+    <dirset dir="${module.gps-e.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.gps-e" depends="compile.module.gps-e.production,compile.module.gps-e.tests" description="Compile module gps-e"/>
+  
+  <target name="compile.module.gps-e.production" description="Compile module gps-e; production classes">
+    <mkdir dir="${gps-e.output.dir}"/>
+    <javac2 destdir="${gps-e.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.gps-e}/javac">
+      <compilerarg line="${compiler.args.gps-e}"/>
+      <bootclasspath refid="gps-e.module.bootclasspath"/>
+      <classpath refid="gps-e.module.production.classpath"/>
+      <src refid="gps-e.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.gps-e"/>
+    </javac2>
+    
+    <copy todir="${gps-e.output.dir}">
+      <fileset dir="${module.gps-e.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.gps-e.tests" depends="compile.module.gps-e.production" description="compile module gps-e; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.gps-e" description="cleanup module">
+    <delete dir="${gps-e.output.dir}"/>
+    <delete dir="${gps-e.testoutput.dir}"/>
+  </target>
+</project>
