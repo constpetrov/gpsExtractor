@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:weightSum="1.0"
+              android:orientation="vertical">
+
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="0dp"
+              android:layout_weight="0.05"
+              android:gravity="left"
+              android:text="@string/trainingField1"
+              android:textSize="12dp"/>
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="0dp"
+              android:layout_weight="0.11"
+              android:gravity="right"
+              android:text="0"
+              android:textSize="28dp"
+              android:id="@+id/trainingSpeed"
+            />
+
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="0dp"
+              android:layout_weight="0.05"
+              android:gravity="left"
+              android:text="@string/trainingField2"
+              android:textSize="12dp"/>
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="0dp"
+              android:layout_weight="0.11"
+              android:text="0"
+              android:textSize="28dp"
+              android:gravity="right"
+              android:id="@+id/trainingTime"/>
+
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="0dp"
+              android:layout_weight="0.05"
+              android:gravity="left"
+              android:text="@string/trainingField3"
+              android:textSize="12dp"/>
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="0dp"
+              android:layout_weight="0.11"
+              android:text="0"
+              android:textSize="28dp"
+              android:gravity="right"
+              android:id="@+id/trainingDistance"/>
+
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="0dp"
+              android:layout_weight="0.05"
+              android:gravity="left"
+              android:text="@string/trainingField4"
+              android:textSize="12dp"/>
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="0dp"
+              android:layout_weight="0.11"
+              android:text="0"
+              android:textSize="28dp"
+              android:gravity="right"
+              android:id="@+id/trainingAvgSpeed"/>
+
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="0dp"
+              android:layout_weight="0.05"
+              android:gravity="left"
+              android:text="@string/trainingField5"
+              android:textSize="12dp"/>
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="0dp"
+              android:layout_weight="0.11"
+              android:text="0"
+              android:textSize="28dp"
+              android:gravity="right"
+              android:id="@+id/trainingRecTime"/>
+
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="0dp"
+              android:layout_weight="0.05"
+              android:gravity="left"
+              android:text="@string/trainingField6"
+              android:textSize="12dp"/>
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="0dp"
+              android:layout_weight="0.11"
+              android:text="0"
+              android:textSize="28dp"
+              android:gravity="right"
+              android:id="@+id/trainingRecDistance"/>
+
+</LinearLayout>

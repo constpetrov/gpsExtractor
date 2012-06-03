@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="1.0"
+    android:id="@+id/main_layout"
+    >
+    <Button
+        android:id="@+id/addWpButton"
+        android:text="Add waypoint here"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.20"
+        />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:weightSum="1.0"
+        android:layout_weight="0.15"
+        android:layout_height="0dp"
+        android:layout_width="fill_parent"
+        >
+        <Button
+            android:id="@+id/saveWpButton"
+            android:text="Save waypoints to file"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.70"
+            />
+        <Button
+                android:id="@+id/clearWpButton"
+                android:text="Clear waypoints"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.30"
+                />
+    </LinearLayout>
+
+    <TextView
+            android:id="@+id/wpList"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.65"
+            />
+</LinearLayout>
+

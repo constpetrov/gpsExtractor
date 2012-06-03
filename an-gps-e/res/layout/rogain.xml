@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.example.RogainLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                              android:id="@+id/rog_lay"
+                              android:layout_width="fill_parent"
+                              android:layout_height="fill_parent">
+
+    </com.example.RogainLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+            android:padding="15dp"
+            android:background="#00000000">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:background="#ff000000">
+        <TextView android:text="TEST, big big big TEST"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/testText"
+                  android:textSize="10pt"
+                  />
+    </LinearLayout>
+    </LinearLayout>
+
+</merge>

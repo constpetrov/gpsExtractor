@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">an-gps-e</string>
+    <string name="rogain_title">Rogain mode</string>
+    <string name="close">Close app</string>
+    <string name="refresh">Restart gps</string>
+    <string name="trainingField1">Speed</string>
+    <string name="trainingField2">Time</string>
+    <string name="trainingField3">Distance</string>
+    <string name="trainingField4">Average speed</string>
+    <string name="trainingField5">Recorded time</string>
+    <string name="trainingField6">Recorded distance</string>
+    <string name="startRec">Start rec</string>
+    <string name="stopRec">Stop rec</string>
+    <string name="clearRec">Clear rec</string>
+    <string name="saveRec">Save rec</string>
+    <string name="training_title">Training</string>
+</resources>
