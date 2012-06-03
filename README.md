@@ -1,2 +1,1 @@
-gpsExtractor
-============
+There is a small gps track analysis swing program and android application fo athletics training needs.
