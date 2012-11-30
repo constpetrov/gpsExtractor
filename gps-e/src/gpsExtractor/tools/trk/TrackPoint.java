@@ -1,63 +1,63 @@
 package gpsExtractor.tools.trk;
 
-import java.util.*;
+import java.util.Date;
 
 /**
- * Created by IntelliJ IDEA.
- * User: constant.petrov
- * Mailto: constant.petrov@gmail.com
- * Date: 27.11.2008
- * Time: 22:02:07
- * To change this template use File | Settings | File Templates.
+ * Created by IntelliJ IDEA. User: constant.petrov Mailto:
+ * constant.petrov@gmail.com Date: 27.11.2008 Time: 22:02:07 To change this
+ * template use File | Settings | File Templates.
  */
+
 public class TrackPoint {
 
-    public double lat=0;
-    public double lon=0;
+    public double lat = 0;
+
+    public double lon = 0;
+
     public Date time;
-    public double elv=0;
 
+    public double elv = 0;
 
-    public TrackPoint(){
-        lat=0;
-        lon=0;
-        time=new Date();
-        elv=0;
+    public TrackPoint() {
+        lat = 0;
+        lon = 0;
+        time = new Date();
+        elv = 0;
     }
 
-    public TrackPoint(double lat, double lon, Date time, double elv){
-        this.lat=lat;
-        this.lon=lon;
-        this.time=time;
-        this.elv=elv;
-    }
-    public TrackPoint(TrackPoint d){
-        this.lat=d.lat;
-        this.lon=d.lon;
-        this.time=d.time;
-        this.elv=d.elv;
+    public TrackPoint(double lat, double lon, Date time, double elv) {
+        this.lat = lat;
+        this.lon = lon;
+        this.time = time;
+        this.elv = elv;
     }
 
-    public boolean equals(TrackPoint d){
-        return (this.lat==d.lat&&this.lon==d.lon&&this.time==d.time&&this.elv==d.elv);
+    public TrackPoint(TrackPoint d) {
+        this.lat = d.lat;
+        this.lon = d.lon;
+        this.time = d.time;
+        this.elv = d.elv;
     }
 
-    public String toString(){
-        return "Lat "+this.lat + "; Lon "+this.lon + "; Elv "+this.elv;
+    public boolean equals(TrackPoint d) {
+        return (this.lat == d.lat && this.lon == d.lon && this.time == d.time && this.elv == d.elv);
     }
 
-    public void print(){
-        System.out.println("Lat "+this.lat);
-        System.out.println("Lon "+this.lon);
-        System.out.println("Elv "+this.elv);
+    public String toString() {
+        return "Lat " + this.lat + "; Lon " + this.lon + "; Elv " + this.elv;
     }
 
+    public void print() {
+        System.out.println("Lat " + this.lat);
+        System.out.println("Lon " + this.lon);
+        System.out.println("Elv " + this.elv);
+    }
 
-    public void set(TrackPoint d){
-        this.lat=d.lat;
-        this.lon=d.lon;
-        this.elv=d.elv;
-        this.time=d.time;
+    public void set(TrackPoint d) {
+        this.lat = d.lat;
+        this.lon = d.lon;
+        this.elv = d.elv;
+        this.time = d.time;
     }
 
     public double getLat() {
@@ -78,15 +78,21 @@ public class TrackPoint {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
 
         TrackPoint that = (TrackPoint) o;
 
-        if (Double.compare(that.elv, elv) != 0) return false;
-        if (Double.compare(that.lat, lat) != 0) return false;
-        if (Double.compare(that.lon, lon) != 0) return false;
-        if (time != null ? !time.equals(that.time) : that.time != null) return false;
+        if (Double.compare(that.elv, elv) != 0)
+            return false;
+        if (Double.compare(that.lat, lat) != 0)
+            return false;
+        if (Double.compare(that.lon, lon) != 0)
+            return false;
+        if (time != null ? !time.equals(that.time) : that.time != null)
+            return false;
 
         return true;
     }
@@ -105,4 +111,3 @@ public class TrackPoint {
         return result;
     }
 }
-
